@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Firebase Leaderboard Example</title>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- JS -->
+    <script src="leaderboard.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="leaderboard.css">
+
+  </head>
+
+  <body>
+    <h1>Rang lista</h1>
+
+    <table id="leaderboardTable" border=1 width=400>
+      <tr>
+        <th>Ime</th>
+        <th>Bodovi</th>
+      </tr>
+    </table>
+
+    <input type="text" id="nameInput" placeholder="Ime">
+    <input type="text" id="scoreInput" placeholder="Bodovi">
+
+    <div id="highestScore">
+      Najveci broj bodova: <span id="highestScoreDiv"></span>
+    </div>
+  </body>
+</html>

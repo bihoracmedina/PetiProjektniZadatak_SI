@@ -1,0 +1,53 @@
+{
+  "name": "si-projekat",
+  "version": "1.0.0",
+  "description": "PetiProjZd",
+  "main": "script.js",
+  "scripts": {
+  "test": "exit 1"
+  },
+  "author": "medina",
+  "license": "ISC"
+  }
+
+{
+  "rules": {
+    // za čitanje i pisanje u tabelu
+    "leaderboard": {
+      ".read": true,
+      ".write": true,
+
+      // score mora biti broj
+      "highestScore": {
+        ".validate": "newData.isNumber()"
+      },
+
+      "scoreList": {
+        "$name": {
+          //svaki rezultat mora sadržavati "ime" i "tekst"
+          ".validate": "newData.hasChildren(['name', 'score'])",
+
+          // ime mora biti string
+          "name": {
+            ".validate": "newData.isString()"
+          },
+
+          // score mora biti broj
+          "score": {
+            ".validate": "newData.isNumber()"
+          },
+
+          //ostalo nije validno
+          "$other": {
+            ".validate": false
+          }
+        }
+      },
+
+      // ostalo nije validno
+      "$other": {
+        ".validate": false
+      }
+    }
+  }
+}
